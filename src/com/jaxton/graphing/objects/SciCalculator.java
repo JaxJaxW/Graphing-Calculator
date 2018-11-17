@@ -7,9 +7,7 @@ import static java.lang.Math.pow;
 
 public class SciCalculator {
     private static Scanner scanner = new Scanner(System.in);
-    private double sum = 0;
     private double answer = 0.0;
-    private int counter = 0;
     private double operations[] = new double[7];
 
     public static void main(String[] args) {
@@ -43,22 +41,9 @@ public class SciCalculator {
                     programLoop = false;
 
                 } else if (selection > 0 && selection < 7) {
-                    enterOperands();
-                    answer = operations[selection];
+                    //enterOperands();
+                    //answer = operations[selection];
                     menu();
-
-                } else if (selection == 7) {
-
-                    if (counter > 0) {
-                        double average = (sum / counter);
-                        // fix this shit ... average = round(average * 100.0) / 100.0;
-                        System.out.print("\nSum of calculations: " + sum + "\nNumber of calculations: " + counter + "\nAverage of calculations: " + average + "\n\n");
-                        System.out.print("Enter Menu Selection: ");
-
-                    } else if (counter == 0) {
-                        System.out.println("Error: No calculations yet to average!\n");
-                        System.out.print("Enter Menu Selection: ");
-                    }
 
                 } else {
                     System.out.println("Error: Invalid selection!\n");
@@ -110,7 +95,7 @@ public class SciCalculator {
         operations[6] = ((log10(var[1])) / (log10(var[0])));
     }
 
-    private double[] getOperands(String string) {
+    private void getOperands(String string) {
         string = string.toLowerCase();
         double result;
         StringBuilder stringBuilder = new StringBuilder(string);
